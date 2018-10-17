@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cO-Ip-LME">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search User-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WTC1" translatesAutoresizingMaskIntoConstraints="NO" id="FEv-bV-eZf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIM-7w-Yza">
+                                <rect key="frame" x="139" y="362" width="96" height="41"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="PyL-he-Npo"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendUserNameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sef-2Q-W7b"/>
+                                    <segue destination="Ysw-2M-aKA" kind="show" identifier="mySegue" id="cYe-X3-bjE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WTC UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="un8-1W-PQ8">
+                                <rect key="frame" x="107" y="288" width="161" height="30"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="un8-1W-PQ8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="224" id="2M0-LZ-qPP"/>
+                            <constraint firstItem="FEv-bV-eZf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JYo-ag-IQD"/>
+                            <constraint firstItem="un8-1W-PQ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="M5v-9A-N7s"/>
+                            <constraint firstItem="wIM-7w-Yza" firstAttribute="top" secondItem="un8-1W-PQ8" secondAttribute="bottom" constant="44" id="OgR-Ir-tk6"/>
+                            <constraint firstItem="wIM-7w-Yza" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="Qwl-0x-dzk"/>
+                            <constraint firstItem="FEv-bV-eZf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RuB-cA-dqf"/>
+                            <constraint firstItem="wIM-7w-Yza" firstAttribute="centerX" secondItem="un8-1W-PQ8" secondAttribute="centerX" id="j14-JQ-iDE"/>
+                            <constraint firstItem="FEv-bV-eZf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nya-Mg-QGf"/>
+                            <constraint firstItem="FEv-bV-eZf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ptd-Mq-B6K"/>
+                            <constraint firstItem="wIM-7w-Yza" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t71-Ou-WDo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search User" id="pR4-qK-BBh"/>
+                    <connections>
+                        <outlet property="userNameTextFied" destination="un8-1W-PQ8" id="0rc-VN-c0g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="118.29085457271366"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="YpW-yu-X3t">
+            <objects>
+                <viewController id="Ysw-2M-aKA" customClass="MainViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WlY-rN-F8G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZbB-Fc-WHK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXq-Zw-O1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2810.4000000000001" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uuZ-Ib-Ecj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Am-9l-shq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4cO-Ip-LME" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ta7-hW-dcT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="A6q-ie-Td7"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="WTC1" width="1300" height="2000"/>
+    </resources>
+</document>
