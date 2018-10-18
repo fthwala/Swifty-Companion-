@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		668EE20121774494002894F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668EE20021774494002894F8 /* MainViewController.swift */; };
-		668EE2032177718F002894F8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668EE2022177718F002894F8 /* UserModel.swift */; };
 		66F048ED2176295E00D22FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F048EC2176295E00D22FBF /* AppDelegate.swift */; };
 		66F048EF2176295E00D22FBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F048EE2176295E00D22FBF /* ViewController.swift */; };
 		66F048F22176295E00D22FBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F048F02176295E00D22FBF /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 		0D7FC817FA38443CB8CC04E9 /* Pods-Swifty Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.release.xcconfig"; sourceTree = "<group>"; };
 		12DF0EA39A05AEE2C227B324 /* Pods_Swifty_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		668EE20021774494002894F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		668EE2022177718F002894F8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		66F048E92176295E00D22FBF /* Swifty Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F048EC2176295E00D22FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66F048EE2176295E00D22FBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				66F048F52176296400D22FBF /* LaunchScreen.storyboard */,
 				66F048F82176296400D22FBF /* Info.plist */,
 				668EE20021774494002894F8 /* MainViewController.swift */,
-				668EE2022177718F002894F8 /* UserModel.swift */,
 			);
 			path = "Swifty Companion";
 			sourceTree = "<group>";
@@ -171,10 +168,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JSONParserSwift/JSONParserSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONParserSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -208,7 +207,6 @@
 			files = (
 				668EE20121774494002894F8 /* MainViewController.swift in Sources */,
 				66F048EF2176295E00D22FBF /* ViewController.swift in Sources */,
-				668EE2032177718F002894F8 /* UserModel.swift in Sources */,
 				66F048ED2176295E00D22FBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

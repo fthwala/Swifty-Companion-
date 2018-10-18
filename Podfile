@@ -7,5 +7,6 @@ target 'Swifty Companion' do
 
   # Pods for Swifty Companion
   pod 'JSONParserSwift'
+  pod 'SwiftyJSON'
 
 end

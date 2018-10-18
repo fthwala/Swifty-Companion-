@@ -8,16 +8,26 @@
 
 import UIKit
 import JSONParserSwift
+//import SwiftyJSON
 
 class MainViewController: UIViewController {
     
     var user: String?
     
     var deToken = ""
-    var topicsBackup: [Dictionary<String,Any>]?
     
+    var httperror = -1;
+    var nameAndlevel:[(name: String, value: Float)] = []
+    var level : Double = 0
+    var url = ""
+    var login = ""
+    var project: [(name: String, value: Any)] = []
+    var grade = (Any).self
+    var phone : Any?
+    var location : Any?
     
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +60,7 @@ class MainViewController: UIViewController {
                 }
             }
         })
-        
+        //print(nameAndlevel[0])
         task.resume()
     }
     
@@ -71,8 +81,47 @@ class MainViewController: UIViewController {
                 do {
                     print(data)
                     let dataAsString = String(data: data, encoding: .utf8)
-                    let baseResponse: BaseResponse = try JSONParserSwift.parse(string: dataAsString!)
-                    print(baseResponse)
+                    let baseResponse = try JSONSerialization.jsonObject(with: (dataAsString?.data(using: .utf8))!) as AnyObject
+                    
+                    print(baseResponse["email"])
+                    
+                    let test = baseResponse["cursus_users"] as? [NSDictionary]
+                    //print(test!)
+                    let img_url_test = baseResponse["image_url"] as! String
+                    print(img_url_test)
+                    self.url = baseResponse["image_url"] as! String
+                    print(self.url)
+                    self.location = baseResponse["location"] as? Any
+                    print(self.location!)
+                    self.phone = baseResponse["phone"] as? Any
+                    print(self.phone!)
+                    for tata in test!
+                    {
+                        if (tata["cursus_id"] as! Int == 8)
+                        {
+                            self.level = tata["level"] as! Double
+                            //self.grade = tata["grade"] as! Any?.Type as! (Any).Protocol
+                            print(self.level)
+                            //print(self.grade)
+                           
+                            for name in tata["skills"] as! [NSDictionary]
+                            {
+                                self.nameAndlevel.append((name: name["name"] as! String, value: Float(name["level"] as! Double)))
+                                
+                            }
+                            self.login = ((tata["user"] as! NSDictionary).value(forKey: "login")) as! String
+                            print(self.nameAndlevel)
+                            print(self.nameAndlevel.count)
+                        }
+                    }
+                    let project = baseResponse["projects_users"] as! [NSDictionary]
+                    for tupproj in project{
+                        self.project.append((name: (tupproj["project"] as! NSDictionary).value(forKey: "slug") as! String , value: tupproj["final_mark"] as Any))
+                    }
+                    print(self.project)
+                    print()
+                    print(self.project.count)
+                    print(self.login)
                  
                 } catch {
                     print(error)
